@@ -110,8 +110,6 @@ par(mfrow = c(1,1))
 res_dirt <- here::here("results","tables")
 res_dirg <- here::here("results","figures")
 
-dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
-
 # 1) Exportar tabla (usa TABLA_MJ que ya calculaste)
 tabla_path <- file.path(res_dirt, "tabla_resultados.xlsx")
 openxlsx::write.xlsx(TABLA_MJ, file = tabla_path, overwrite = TRUE)
