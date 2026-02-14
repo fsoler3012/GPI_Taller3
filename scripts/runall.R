@@ -1,0 +1,5 @@
+source('codigo/simulate_clinical_data.R')
+source('codigo/Directory_Data.R')
+source('codigo/Experiment_Clinical_Data.R')
+source('codigo/Institution_Historic_Records.R')
+source('codigo/Clean_Sample_Clinical_Results.R')
