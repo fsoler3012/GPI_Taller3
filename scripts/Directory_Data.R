@@ -9,11 +9,11 @@ if (!requireNamespace("openxlsx", quietly = TRUE)) install.packages("openxlsx", 
 
 library(here); library(readxl); library(openxlsx)
 # Anclar raíz (ajusta el nombre si cambias este archivo de carpeta/nombre)
-here::i_am("codigo/Directory_Data.R")
+here::i_am("scripts/Directory_Data.R")
 
 # Rutas
-in_path  <- here::here("datos", "raw",  "electrofisiologos.xlsx")
-out_dir  <- here::here("datos", "clean")
+in_path  <- here::here("data", "raw",  "electrofisiologos.xlsx")
+out_dir  <- here::here("data", "processed")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 out_path <- file.path(out_dir, "Contact_Clean.xlsx")
 # Leer

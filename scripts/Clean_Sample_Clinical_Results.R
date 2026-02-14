@@ -11,11 +11,11 @@ if (!requireNamespace("openxlsx", quietly = TRUE)) install.packages("openxlsx", 
 
 library(here); library(readxl); library(openxlsx)
 # Raíz
-here::i_am("codigo/Clean_Sample_Clinical_Results.R")
+here::i_am("scripts/Clean_Sample_Clinical_Results.R")
 
 # Rutas
-exp_path  <- here::here("datos", "clean", "Experiment_Clean.xlsx")
-hist_path <- here::here("datos", "clean", "Historic_Clean.xlsx")
+exp_path  <- here::here("data", "processed", "Experiment_Clean.xlsx")
+hist_path <- here::here("data", "processed", "Historic_Clean.xlsx")
 
 # Leer
 E <- readxl::read_xlsx(exp_path)
@@ -107,15 +107,17 @@ slope_simple(ha2, yl = "Conteo (hemorragias)", main_txt = "Cambio de Hemorragias
 par(mfrow = c(1,1))
 
 # Carpeta de salida
-res_dir <- here::here("resultados")
+res_dirt <- here::here("results","tables")
+res_dirg <- here::here("results","figures")
+
 dir.create(res_dir, recursive = TRUE, showWarnings = FALSE)
 
 # 1) Exportar tabla (usa TABLA_MJ que ya calculaste)
-tabla_path <- file.path(res_dir, "tabla_resultados.xlsx")
+tabla_path <- file.path(res_dirt, "tabla_resultados.xlsx")
 openxlsx::write.xlsx(TABLA_MJ, file = tabla_path, overwrite = TRUE)
 
 # 2) Exportar gráfico (re-dibuja tu gráfico dentro del dispositivo)
-grafico_path <- file.path(res_dir, "grafico_resultados.png")
+grafico_path <- file.path(res_dirg, "grafico_resultados.png")
 png(grafico_path, width = 1400, height = 700, res = 150)
 
 cat("Análisis creados y exportados con éxito")

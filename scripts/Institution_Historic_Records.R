@@ -8,11 +8,11 @@ if (!requireNamespace("readxl", quietly = TRUE)) install.packages("readxl", repo
 if (!requireNamespace("openxlsx", quietly = TRUE)) install.packages("openxlsx", repos = "https://cloud.r-project.org")
 
 library(here); library(readxl); library(openxlsx)
-here::i_am("codigo/Institution_Historic_Records.R")
+here::i_am("scripts/Institution_Historic_Records.R")
 
-hist_path <- here::here("datos", "raw",   "historicos_ene_abr_2025.xlsx")
-cont_path <- here::here("datos", "clean", "Contact_Clean.xlsx")
-out_dir   <- here::here("datos", "clean")
+hist_path <- here::here("data", "raw",   "historicos_ene_abr_2025.xlsx")
+cont_path <- here::here("data", "processed", "Contact_Clean.xlsx")
+out_dir   <- here::here("data", "processed")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 out_path  <- file.path(out_dir, "Historic_Clean.xlsx")
 

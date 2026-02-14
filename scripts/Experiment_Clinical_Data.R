@@ -8,11 +8,11 @@ if (!requireNamespace("openxlsx", quietly = TRUE)) install.packages("openxlsx", 
 
 
 library(here); library(readxl); library(openxlsx)
-here::i_am("codigo/Experiment_Clinical_Data.R")
+here::i_am("scripts/Experiment_Clinical_Data.R")
 
-proc_path <- here::here("datos", "raw",   "procedimientos_may_jun_2025.xlsx")
-cont_path <- here::here("datos", "clean", "Contact_Clean.xlsx")
-out_dir   <- here::here("datos", "clean")
+proc_path <- here::here("data", "raw",   "procedimientos_may_jun_2025.xlsx")
+cont_path <- here::here("data", "processed", "Contact_Clean.xlsx")
+out_dir   <- here::here("data", "processed")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 out_path  <- file.path(out_dir, "Experiment_Clean.xlsx")
 

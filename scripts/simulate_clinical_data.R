@@ -240,9 +240,9 @@ for (i in seq_along(id_insts)) {
 }
 historicos <- do.call(rbind, historicos)
 
-here::i_am("codigo/simulate_clinical_data.R")
+here::i_am("scripts/simulate_clinical_data.R")
 
-out_dir  <- here::here("datos", "raw")
+out_dir  <- here::here("data", "raw")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
 ep_path   <- file.path(out_dir, "electrofisiologos.xlsx")
